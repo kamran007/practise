@@ -1,0 +1,28 @@
+.container {
+  max-width: 250px;
+  margin: 50px auto;
+  padding: 10px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+}
+
+button.btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  margin: 10px auto;
+  font-size: 20px;
+  border-radius: 4px;
+  line-height: 40px;
+}
+button.btn:hover {
+  background: #dedede;
+  border: 1px solid #dedede;
+}
+button.btn:active{
+  transform: translateY(4px);
+}
