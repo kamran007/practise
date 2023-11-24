@@ -4,20 +4,19 @@ import TodoItems from './components/TodoItems';
 import AppContainer from './components/AppContainer.jsx';
 import AddTodo from './components/AddTodo';
 import { useState } from 'react';
+import { useRef } from 'react';
 function App() {
   let initialValue=[];
   const [todoList, setTodoList] = useState(initialValue);
-  let [counter,setCounter] = useState(1);
+  let counter = useRef(1);
   const addDataHandler = (task,date)=>{
-    let newList=[...todoList];
     const item = {
-      "id": counter,
+      "id": counter.current,
       "task": task,
       "date": date
     }
-    setCounter((pre)=> pre+1);
-    newList.push(item);
-    setTodoList(newList);
+    counter.current = counter.current + 1;
+    setTodoList((pre)=> [...pre,item]);
   }
   const DeleteHandler = (id)=>{
     let newData = todoList.filter(item=> item.id != id);
