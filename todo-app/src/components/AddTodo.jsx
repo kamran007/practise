@@ -1,17 +1,19 @@
 /* eslint-disable react/prop-types */
+import { useContext } from "react";
 import { useRef } from "react";
 import { IoBagAddOutline } from "react-icons/io5";
-export default function AddTodo({addDataHandler}){
+import { TodoContex } from "../store/todoContexStore";
+export default function AddTodo(){
+    const {addEventHandler} = useContext(TodoContex);
     const data_task = useRef();
     const data_date = useRef();
     const submitData= (e)=>{
         e.preventDefault();
         const task_name = data_task.current.value;
         const desiredDate = data_date.current.value;
-        addDataHandler(task_name,desiredDate);
+        addEventHandler(task_name,desiredDate);
         data_task.current.value = '';
         data_date.current.value = '';
-
     }
     return(
         <form className="todoFormContainer" onSubmit={(e)=> submitData(e)}>

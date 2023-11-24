@@ -5,6 +5,7 @@ import AppContainer from './components/AppContainer.jsx';
 import AddTodo from './components/AddTodo';
 import { useState } from 'react';
 import { useRef } from 'react';
+import { TodoContex } from './store/todoContexStore';
 function App() {
   let initialValue=[];
   const [todoList, setTodoList] = useState(initialValue);
@@ -24,9 +25,11 @@ function App() {
   }
   return (
     <AppContainer>
+      <TodoContex.Provider value={{items:todoList,addEventHandler:addDataHandler,DeleteEventHandler:DeleteHandler}}>
       <h3 className='appTitle'>Todo App</h3>
-      <AddTodo addDataHandler={addDataHandler}/>
-      <TodoItems items={todoList} onDeleteHandler={DeleteHandler}/>
+      <AddTodo/>
+      <TodoItems/>
+      </TodoContex.Provider>
     </AppContainer>
   )
 }
