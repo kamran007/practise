@@ -1,9 +1,9 @@
 /* eslint-disable react/prop-types */
 import { FiDelete } from "react-icons/fi";
 import { useContext } from "react";
-import { TodoContex } from "../store/todoContexStore";
+import { TodoContext } from "../store/todoContextStore";
 export default function TodoItem({item}){
-    const {DeleteEventHandler} = useContext(TodoContex);
+    const {DeleteEventHandler} = useContext(TodoContext);
     const {id,task,date} = item;  
     return (
         <>

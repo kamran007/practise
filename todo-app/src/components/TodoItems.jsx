@@ -2,9 +2,9 @@
 import TodoItem from "./TodoItem";
 import styles from './TodoItems.module.css';
 import { useContext } from "react";
-import { TodoContex } from "../store/todoContexStore";
+import { TodoContext } from "../store/todoContextStore";
 export default function TodoItems(){
-    const {items} = useContext(TodoContex);
+    const {items} = useContext(TodoContext);
     return(
         <div className={styles.todoListContainer}>
             { items.length === 0 && <p className={styles.noDataMessage}>No data</p>}

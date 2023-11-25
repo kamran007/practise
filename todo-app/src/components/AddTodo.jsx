@@ -2,9 +2,9 @@
 import { useContext } from "react";
 import { useRef } from "react";
 import { IoBagAddOutline } from "react-icons/io5";
-import { TodoContex } from "../store/todoContexStore";
+import { TodoContext } from "../store/todoContextStore";
 export default function AddTodo(){
-    const {addEventHandler} = useContext(TodoContex);
+    const {addEventHandler} = useContext(TodoContext);
     const data_task = useRef();
     const data_date = useRef();
     const submitData= (e)=>{
