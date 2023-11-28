@@ -16,6 +16,11 @@ const CreatePost = ()=>{
         const reaction = reactionsElement.current.value;
         const tags = tagElement.current.value;
         addPost(title,body,reaction,userId,tags);
+        userIdElement.current.value ="";
+        titleElement.current.value ="";
+        bodyElement.current.value ="";
+        reactionsElement.current.value ="";
+        tagElement.current.value ="";
     }
     return(
         <form className="add-post-form" onSubmit={handleSubmit}>

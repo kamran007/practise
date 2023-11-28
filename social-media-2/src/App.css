@@ -1,0 +1,22 @@
+.app-container{
+    display: flex;
+}
+.content{
+    width: 100%;
+}
+
+.sidebar{
+    min-height: 100vh;
+}
+
+.card.post-card {
+    margin: 50px 80px;
+}
+
+form.add-post-form {
+    width: 80%;
+    margin: 50px auto;
+    padding: 50px;
+    border: 1px solid #dedede;
+    border-radius: 8px;
+}
